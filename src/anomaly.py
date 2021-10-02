@@ -346,6 +346,7 @@ def upload_images(train_image_dir, anomaly_image_dir, image_size):
 
 
 def main():
+    st.title("EfficientNetによる異常検知")
     # 初期値設定
     MODEL = 5
     LEVEL = 7
