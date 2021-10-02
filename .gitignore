@@ -1,0 +1,7 @@
+*.png
+*.zip
+__MACOSX/
+anomaly/
+good/
+.idea/
+__pycache__/
