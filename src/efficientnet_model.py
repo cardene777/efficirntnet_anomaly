@@ -5,9 +5,6 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, backend, models, utils
 from six.moves import xrange
-from keras_applications.imagenet_utils import _obtain_input_shape
-from keras_applications.imagenet_utils import preprocess_input as _preprocess_input
-from keras.preprocessing.image import ImageDataGenerator
 
 from weights import IMAGENET_WEIGHTS_PATH, IMAGENET_WEIGHTS_HASHES, NS_WEIGHTS_HASHES, NS_WEIGHTS_PATH
 
@@ -217,23 +214,7 @@ def EfficientNet(width_coefficient,
     features: dict = {}
 
     print(input_tensor)
-
-    # Determine proper input shape
-    input_shape = _obtain_input_shape(input_shape,
-                                      default_size=default_resolution,
-                                      min_size=32,
-                                      data_format='channels_last',
-                                      require_flatten=include_top,
-                                      weights=weights)
-
-    if input_tensor is None:
-        img_input = layers.Input(shape=input_shape)
-    else:
-        # from tensorflow.python.keras.backend import is_keras_tensor
-        # if not is_keras_tensor(input_tensor):
-        #     img_input = layers.Input(tensor=input_tensor, shape=input_shape)
-        # else:
-        img_input = input_tensor
+    img_input = input_tensor
 
     bn_axis = 3
     activation = get_swish(**kwargs)
