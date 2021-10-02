@@ -5,6 +5,7 @@ scipy
 numpy
 matplotlib
 opencv-python
+opencv-contrib-python
 sklearn
 seaborn
 tensorflow
