@@ -4,7 +4,6 @@ pandas
 scipy
 numpy
 matplotlib
-cv2
 opencv-python
 sklearn
 seaborn
