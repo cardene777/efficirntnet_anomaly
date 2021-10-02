@@ -1,28 +1,19 @@
 import streamlit as st
-import os
 import zipfile
 from stqdm import stqdm
 
 import os
-import pandas as pd
 from scipy import stats
 import glob
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
-import japanize_matplotlib
 import random
 import cv2
 from sklearn import metrics
-from sklearn.metrics import confusion_matrix
 import seaborn as sns
 from scipy.spatial import distance
-# tensorflow
 import tensorflow as tf
 import efficientnet_model
-
-matplotlib.use('Agg')
-sns.set(font='IPAexGothic')
 
 
 def image_transform(index, image_data, resize, train=""):
@@ -458,8 +449,8 @@ def main():
         sns.heatmap([[len(anomaly_result), len(anomaly_score) - len(anomaly_result)],
                      [len(normal_result), len(normal_score) - len(normal_result)]],
                     annot=True, cmap='Blues', fmt="d", cbar=False)
-        plt.ylabel("良品（１）・不良品画像（０）")
-        plt.xlabel("良品画像判定（１）・不良品画像判定（０）")
+        plt.ylabel("anomaly（１）・good（０）")
+        plt.xlabel("anomaly（１）・good（０）")
         plt.savefig('confusion_matrix.png')
         st.pyplot(fig)
 
