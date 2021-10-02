@@ -6,6 +6,7 @@ from tensorflow import keras
 from tensorflow.keras import layers, backend, models, utils
 from six.moves import xrange
 
+
 from weights import IMAGENET_WEIGHTS_PATH, IMAGENET_WEIGHTS_HASHES, NS_WEIGHTS_HASHES, NS_WEIGHTS_PATH
 
 BlockArgs = collections.namedtuple('BlockArgs', [

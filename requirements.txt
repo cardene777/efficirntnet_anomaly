@@ -11,3 +11,4 @@ seaborn
 tensorflow
 six
 keras
+keras_applications
