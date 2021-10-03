@@ -458,14 +458,16 @@ def main():
         # 推論（テスト）
         inference_test(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL)
 
-        # 推論（指定枚数分）
-        number = st.slider('何枚の不良品画像の異常部分を可視化しますか？', 0, len(anomaly_score), 10)
-        # start_btn = st.button('実行')
-        # if start_btn:
-        if number > 0:
-            inference(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL, number)
-        else:
-            st.text("スライドバーで可視化したい枚数を指定してください。")
+        # # 推論（指定枚数分）
+        # number = st.slider('何枚の不良品画像の異常部分を可視化しますか？', 0, len(anomaly_score), 10)
+        # # start_btn = st.button('実行')
+        # # if start_btn:
+        # if number > 0:
+        #     inference(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL, number)
+        # else:
+        #     st.text("スライドバーで可視化したい枚数を指定してください。")
+        number = 10
+        inference(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL, number)
 
 
 if __name__ == '__main__':
