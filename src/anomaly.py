@@ -456,7 +456,7 @@ def main():
         st.pyplot(fig)
 
         # 推論（テスト）
-        inference_test(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL)
+        # inference_test(anomaly_array, features, mean, cov_i, APLHA, LAMDA, LEVEL)
 
         # # 推論（指定枚数分）
         # number = st.slider('何枚の不良品画像の異常部分を可視化しますか？', 0, len(anomaly_score), 10)
