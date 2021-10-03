@@ -1,4 +1,2 @@
 libgl1-mesa-dev
 libglib2.0-0
-libcudart.so.11.0
-libcuda.so.1
